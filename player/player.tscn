@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtv6lvt1dfjlq"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_mx148"]
+[ext_resource type="Texture2D" uid="uid://dqkodqso5v82q" path="res://icon.svg" id="2_4bq7k"]
+[ext_resource type="PackedScene" uid="uid://v1gqyvpi63jl" path="res://cannon/cannon.tscn" id="3_cy21t"]
+[ext_resource type="PackedScene" uid="uid://wyk53n4nnyqw" path="res://projectile/projectile.tscn" id="4_e512h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oan4h"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_mx148")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oan4h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4bq7k")
+
+[node name="cannon" parent="." instance=ExtResource("3_cy21t")]
+position = Vector2(0, -50)
+rotation = -1.5708
+Bullet = ExtResource("4_e512h")

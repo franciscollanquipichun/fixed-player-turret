@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://v1gqyvpi63jl"]
+
+[ext_resource type="Script" path="res://cannon/cannon.gd" id="1_2l3x8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy5yu"]
+size = Vector2(50, 20)
+
+[node name="cannon" type="Area2D"]
+script = ExtResource("1_2l3x8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vy5yu")
+debug_color = Color(0.99196, 0, 0.258596, 0.42)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(40, 0)
